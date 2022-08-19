@@ -1,4 +1,4 @@
-import "./App.css";
+import './App.styled.jsx';
 
 function App() {
   return <div></div>;
