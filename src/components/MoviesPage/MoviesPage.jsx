@@ -20,9 +20,8 @@ export function MoviesPage(params) {
 
   return (
     <>
-      <h1>MoviesPage</h1>
+      <h1>What movie would you like to see?</h1>
 
-      {/* {movies && ( */}
       <ul>
         {movies &&
           movies.map(movie => (
@@ -31,7 +30,6 @@ export function MoviesPage(params) {
             </li>
           ))}
       </ul>
-      {/* )} */}
     </>
   );
 }
