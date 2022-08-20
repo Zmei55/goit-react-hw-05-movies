@@ -3,10 +3,10 @@ import { Container } from '../Container';
 import { AppBar } from '../AppBar';
 import { HomeView } from '../../pages/HomeView';
 import { MoviesView } from '../../pages/MoviesView';
-import { MoviesPage } from '../MoviesPage';
-import { MovieDetailsPage } from '../MovieDetailsPage';
-import { Cast } from '../Cast';
-import { Reviews } from '../Reviews';
+// import { MoviesPage } from '../MoviesPage';
+// import { MovieDetailsPage } from '../MovieDetailsPage';
+// import { Cast } from '../Cast';
+// import { Reviews } from '../Reviews';
 import './App.styled.jsx';
 
 export function App() {
