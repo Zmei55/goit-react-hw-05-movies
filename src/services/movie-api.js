@@ -13,3 +13,9 @@ export function fetchTrendingTodayMovies() {
     `${BASE_URL}trending/movie/day?api_key=${API_KEY}`,
   );
 }
+
+export function fetchFindMovies(searchQuery) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-de&query=${searchQuery}&page=1&include_adult=false`,
+  );
+}
