@@ -19,3 +19,9 @@ export function fetchFindMovies(searchQuery) {
     `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-de&query=${searchQuery}&page=1&include_adult=false`,
   );
 }
+
+export function fetchMovieById(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}movie/${movieId}?api_key=${API_KEY}&language=en-de`,
+  );
+}

@@ -12,7 +12,7 @@ export function HomePage(params) {
       .catch();
   }, []);
 
-  // console.log(movies);
+  console.log(movies);
 
   return (
     <>
@@ -23,7 +23,7 @@ export function HomePage(params) {
           {movies &&
             movies.map(movie => (
               <li key={movie.id}>
-                <Link to="/movies">{movie.title}</Link>
+                <Link to={`${movie.id}`}>{movie.title}</Link>
               </li>
             ))}
         </ul>
