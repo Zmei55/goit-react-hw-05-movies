@@ -8,7 +8,6 @@ export function MovieDetailsPage(params) {
   const { poster_path, title, vote_average, release_date, overview, genres } =
     movie;
 
-  console.log(movie);
   useEffect(() => {
     // if (movieId === '') {
     //   return;
