@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
-// import { HomePage } from '../components/HomePage';
+import { Home } from '../components/Home';
 
 export function HomeView() {
   const [movies, setMovies] = useState(null);
@@ -17,15 +16,7 @@ export function HomeView() {
     <>
       <h1>Trending today</h1>
 
-      {movies && (
-        <ul>
-          {movies.map(movie => (
-            <li key={movie.id}>
-              <Link to={`${movie.id}`}>{movie.title}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {movies && <Home movies={movies} />}
     </>
   );
 }
