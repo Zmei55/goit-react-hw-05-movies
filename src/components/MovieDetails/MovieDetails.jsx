@@ -1,6 +1,19 @@
 // import { useState, useEffect } from 'react';
 import * as movieAPI from '../../services/movie-api';
 import placeholder from '../../image/placeholder.png';
+import {
+  Container,
+  PosterImg,
+  InfoCard,
+  Title,
+  Score,
+  OverviewWraper,
+  OverviewTitle,
+  OverviewText,
+  Genres,
+  GenresList,
+  GenresListItem,
+} from './MovieDetails.styled';
 
 export function MovieDetails({ movie }) {
   const { poster_path, title, vote_average, release_date, overview, genres } =
@@ -23,31 +36,25 @@ export function MovieDetails({ movie }) {
   return (
     <>
       {movie && (
-        <div>
-          <img src={posterImgUrl(poster_path)} alt={title} />
-          <div>
-            <h2>
-              {title}
-              <span>{release_date.substring(0, 4)}</span>
-            </h2>
-            <p>
-              User Score:
-              <span>{`${Math.round(vote_average * 10)}%`}</span>
-            </p>
-            <h3>
-              Overview:
-              <p>{overview}</p>
-            </h3>
-            <h3>
+        <Container>
+          <PosterImg src={posterImgUrl(poster_path)} alt={title} />
+          <InfoCard>
+            <Title>{`${title} (${release_date.substring(0, 4)})`}</Title>
+            <Score>{`User Score: ${Math.round(vote_average * 10)}%`}</Score>
+            <OverviewWraper>
+              <OverviewTitle>Overview:</OverviewTitle>
+              <OverviewText>{overview}</OverviewText>
+            </OverviewWraper>
+            <Genres>
               Genres
-              <ul>
+              <GenresList>
                 {genres.map(genre => (
-                  <li key={genre.id}>{genre.name}</li>
+                  <GenresListItem key={genre.id}>{genre.name}</GenresListItem>
                 ))}
-              </ul>
-            </h3>
-          </div>
-        </div>
+              </GenresList>
+            </Genres>
+          </InfoCard>
+        </Container>
       )}
     </>
   );
