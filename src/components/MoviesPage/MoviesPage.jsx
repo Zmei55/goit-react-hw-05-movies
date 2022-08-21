@@ -22,14 +22,15 @@ export function MoviesPage(params) {
     <>
       <h1>What movie would you like to see?</h1>
 
-      <ul>
-        {movies &&
-          movies.map(movie => (
+      {movies && (
+        <ul>
+          {movies.map(movie => (
             <li key={movie.id}>
-              <Link to="/movies">{movie.title}</Link>
+              <Link to={`${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </>
   );
 }

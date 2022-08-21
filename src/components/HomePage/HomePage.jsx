@@ -18,12 +18,11 @@ export function HomePage(params) {
 
       {movies && (
         <ul>
-          {movies &&
-            movies.map(movie => (
-              <li key={movie.id}>
-                <Link to={`${movie.id}`}>{movie.title}</Link>
-              </li>
-            ))}
+          {movies.map(movie => (
+            <li key={movie.id}>
+              <Link to={`${movie.id}`}>{movie.title}</Link>
+            </li>
+          ))}
         </ul>
       )}
     </>

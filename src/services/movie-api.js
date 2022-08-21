@@ -25,3 +25,7 @@ export function fetchMovieById(movieId) {
     `${BASE_URL}movie/${movieId}?api_key=${API_KEY}&language=en-de`,
   );
 }
+
+export function fetchImageFromMovie(poster_path) {
+  return `https://image.tmdb.org/t/p/w200${poster_path}`;
+}

@@ -17,9 +17,9 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<HomeView />} />
-        <Route path="/:movieId" element={<MovieDetailsView />} />
+        {/* <Route path="/:movieId" element={<MovieDetailsView />} /> */}
         <Route path="/movies" element={<MoviesView />} />
-        <Route path="/movies/:movieId" element={<MovieDetailsView />}>
+        <Route path="/:movieId" element={<MovieDetailsView />}>
           {/* <Route path="cast" element={<MovieDetailsPage />} /> */}
           {/* <Route path=":movieId" element={<MovieDetailsPage />} /> */}
         </Route>
