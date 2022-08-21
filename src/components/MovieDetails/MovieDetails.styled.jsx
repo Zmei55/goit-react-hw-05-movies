@@ -19,7 +19,7 @@ export const Score = styled.p`
   margin-bottom: 16px;
 `;
 
-export const OverviewWraper = styled.h3`
+export const OverviewWraper = styled.div`
   margin-bottom: 16px;
 `;
 

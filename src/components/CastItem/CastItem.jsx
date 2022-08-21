@@ -1,5 +1,11 @@
 import * as movieAPI from '../../services/movie-api';
 import placeholder from '../../image/placeholder.png';
+import {
+  CastList,
+  CastListItem,
+  ProfileImg,
+  ProfileName,
+} from './CastItem.styled';
 
 export function CastItem({ casts }) {
   function getProfileImgUrl(poster_path) {
@@ -9,13 +15,16 @@ export function CastItem({ casts }) {
   }
 
   return (
-    <ul>
+    <CastList>
       {casts.map(cast => (
-        <li key={cast.id}>
-          <img src={getProfileImgUrl(cast.profile_path)} alt={cast.name} />
-          <h4>{cast.name}</h4>
-        </li>
+        <CastListItem key={cast.id}>
+          <ProfileImg
+            src={getProfileImgUrl(cast.profile_path)}
+            alt={cast.name}
+          />
+          <ProfileName>{cast.name}</ProfileName>
+        </CastListItem>
       ))}
-    </ul>
+    </CastList>
   );
 }
