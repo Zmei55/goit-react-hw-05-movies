@@ -1,9 +1,31 @@
-import { HomePage } from '../components/HomePage';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import * as movieAPI from '../services/movie-api';
+// import { HomePage } from '../components/HomePage';
 
-export function HomeView(params) {
+export function HomeView() {
+  const [movies, setMovies] = useState(null);
+
+  useEffect(() => {
+    movieAPI
+      .fetchTrendingTodayMovies()
+      .then(movies => setMovies(movies.results))
+      .catch();
+  }, []);
+
   return (
     <>
-      <HomePage />
+      <h1>Trending today</h1>
+
+      {movies && (
+        <ul>
+          {movies.map(movie => (
+            <li key={movie.id}>
+              <Link to={`${movie.id}`}>{movie.title}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
