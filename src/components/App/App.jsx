@@ -4,10 +4,8 @@ import { AppBar } from '../AppBar';
 import { HomeView } from '../../pages/HomeView';
 import { MoviesView } from '../../pages/MoviesView';
 import { MovieDetailsView } from '../../pages/MovieDetailsView';
-// import { MoviesPage } from '../MoviesPage';
-// import { MovieDetailsPage } from '../MovieDetailsPage';
-// import { Cast } from '../Cast';
-// import { Reviews } from '../Reviews';
+import { MovieCastView } from '../../pages/MovieCastView';
+import { MovieReviewsView } from '../../pages/MovieReviewsView';
 import './App.styled.jsx';
 
 export function App() {
@@ -20,8 +18,8 @@ export function App() {
         <Route path="/:movieId" element={<MovieDetailsView />} />
         <Route path="/movies" element={<MoviesView />} />
         <Route path="/movies/:movieId" element={<MovieDetailsView />}>
-          {/* <Route path="cast" element={<MovieDetailsPage />} /> */}
-          {/* <Route path=":movieId" element={<MovieDetailsPage />} /> */}
+          <Route path="cast" element={<MovieCastView />} />
+          <Route path="reviews" element={<MovieReviewsView />} />
         </Route>
       </Routes>
     </Container>

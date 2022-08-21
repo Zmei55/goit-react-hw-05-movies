@@ -1,29 +1,27 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
-// import { MovieDetailsPage } from '../components/MovieDetailsPage';
+import { MovieCastView } from '../pages/MovieCastView';
+import { MovieReviewsView } from '../pages/MovieReviewsView';
 
 export function MovieDetailsView() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
   const { poster_path, title, vote_average, release_date, overview, genres } =
     movie;
+  const posterImgUrl = movieAPI.fetchImageFromMovie(poster_path);
 
   useEffect(() => {
-    // if (movieId === '') {
-    //   return;
-    // }
-
     movieAPI.fetchMovieById(movieId).then(setMovie);
   }, [movieId]);
 
-  const posterUrl = movieAPI.fetchImageFromMovie(poster_path);
+  // console.log(movie);
 
   return (
     <>
       {movie && (
         <div>
-          <img src={posterUrl} alt={title} width="" />
+          <img src={posterImgUrl} alt={title} width="" />
           <div>
             <h2>
               {title}
@@ -48,6 +46,11 @@ export function MovieDetailsView() {
           </div>
         </div>
       )}
+      <hr />
+
+      <MovieCastView />
+
+      <MovieReviewsView />
     </>
   );
 }

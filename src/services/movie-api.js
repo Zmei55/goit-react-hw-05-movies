@@ -26,6 +26,18 @@ export function fetchMovieById(movieId) {
   );
 }
 
-export function fetchImageFromMovie(poster_path) {
-  return `https://image.tmdb.org/t/p/w200${poster_path}`;
+export function fetchImageFromMovie(path) {
+  return `https://image.tmdb.org/t/p/w500${path}`;
+}
+
+export function fetchCastFromMovie(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}movie/${movieId}/credits?api_key=${API_KEY}&language=en-de`,
+  );
+}
+
+export function fetchReviewsFromMovie(movieId) {
+  return fetchWithErrorHandling(
+    `${BASE_URL}movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
+  );
 }
