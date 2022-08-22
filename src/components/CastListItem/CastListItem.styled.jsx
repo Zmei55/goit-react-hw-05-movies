@@ -1,14 +1,6 @@
 import styled from '@emotion/styled';
 
-export const CastList = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  margin: -10px;
-`;
-
-export const CastListItem = styled.li`
+export const ListItem = styled.li`
   margin: 10px;
 `;
 

@@ -1,6 +1,4 @@
-// import { useState, useEffect } from 'react';
-import * as movieAPI from '../../services/movie-api';
-import placeholder from '../../image/placeholder.png';
+import { getImgUrl } from '../../utils';
 import {
   Container,
   PosterImg,
@@ -18,26 +16,13 @@ import {
 export function MovieDetails({ movie }) {
   const { poster_path, title, vote_average, release_date, overview, genres } =
     movie;
-
-  // useEffect(() => {
-  //   function posterImgUrl(path) {
-  //     return poster_path !== null
-  //       ? movieAPI.fetchImageFromMovie(path)
-  //       : placeholder;
-  //   }
-  // })
-
-  function posterImgUrl(path) {
-    return poster_path !== null
-      ? movieAPI.fetchImageFromMovie(path)
-      : placeholder;
-  }
+  const posterImg = getImgUrl(poster_path);
 
   return (
     <>
       {movie && (
         <Container>
-          <PosterImg src={posterImgUrl(poster_path)} alt={title} />
+          <PosterImg src={posterImg} alt={title} />
           <InfoCard>
             <Title>{`${title} (${release_date.substring(0, 4)})`}</Title>
             <Score>{`User Score: ${Math.round(vote_average * 10)}%`}</Score>

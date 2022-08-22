@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
-import { CastItem } from '../components/CastItem';
+import { CastList } from '../components/CastList';
 
 export function MovieCastView() {
   const { movieId } = useParams();
@@ -11,5 +11,5 @@ export function MovieCastView() {
     movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
   }, [movieId]);
 
-  return <>{casts && <CastItem casts={casts} />}</>;
+  return <>{casts && <CastList casts={casts} />}</>;
 }
