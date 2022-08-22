@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export function Home({ movies }) {
+export function MoviesList({ movies }) {
   return (
     <ul>
       {movies.map(movie => (

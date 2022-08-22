@@ -1,12 +1,19 @@
+import {
+  ReviewList,
+  ReviewListItem,
+  AuthorName,
+  ReviewText,
+} from './Reviews.styled';
+
 export function Reviews({ reviews }) {
   return (
-    <ul>
+    <ReviewList>
       {reviews.map(review => (
-        <li key={review.id}>
-          <h4>Author: {review.author}</h4>
-          <p>{review.content}</p>
-        </li>
+        <ReviewListItem key={review.id}>
+          <AuthorName>Author: {review.author}</AuthorName>
+          <ReviewText>{review.content}</ReviewText>
+        </ReviewListItem>
       ))}
-    </ul>
+    </ReviewList>
   );
 }
