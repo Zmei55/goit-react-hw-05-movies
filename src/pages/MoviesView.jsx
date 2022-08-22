@@ -18,13 +18,5 @@ export function MoviesView() {
       .catch();
   }, [contextSearchQuery]);
 
-  return (
-    <>
-      {movies ? (
-        <Movies movies={movies} />
-      ) : (
-        <h1>What movie would you like to see?</h1>
-      )}
-    </>
-  );
+  return <>{movies && <Movies movies={movies} />}</>;
 }
