@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-export const Nav = styled.nav``;
+export const Nav = styled.nav`
+  margin-right: 16px;
+`;
 
 export const Link = styled(NavLink)`
   display: inline-block;
@@ -12,6 +14,6 @@ export const Link = styled(NavLink)`
   font-size: 18px;
 
   &.active {
-    color: #2196f3;
+    color: #fff;
   }
 `;

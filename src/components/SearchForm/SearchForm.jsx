@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react';
 import MoviesContext from '../../context/movies/movies-context';
-import { Form, Input, Button } from './SearchForm.styled';
+import { IconButton } from '../IconButton';
+import { ImSearch } from 'react-icons/im';
+import { Form, Input } from './SearchForm.styled';
 
 export function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,8 +21,17 @@ export function SearchForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Input type="text" value={searchQuery} onChange={handleChange} />
-      <Button type="submit">Search</Button>
+      <IconButton type="submit">
+        <ImSearch />
+      </IconButton>
+
+      <Input
+        type="text"
+        value={searchQuery}
+        onChange={handleChange}
+        autoFocus
+        placeholder="What movie would you like to see?"
+      />
     </Form>
   );
 }
