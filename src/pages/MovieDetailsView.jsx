@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import {
+  useParams,
+  useLocation,
+  useNavigate,
+  // Routes,
+  // Route,
+  // NavLink
+} from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
 import { Button } from '../components/Button';
 import { MovieDetails } from '../components/MovieDetails';

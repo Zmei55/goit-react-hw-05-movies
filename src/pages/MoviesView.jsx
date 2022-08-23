@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import MoviesContext from '../context/movies/movies-context';
 import * as movieAPI from '../services/movie-api';
-import { Movies } from '../components/MovieList';
+import { MoviesList } from '../components/MovieList';
 
 export function MoviesView() {
   const [movies, setMovies] = useState(null);
@@ -18,5 +18,5 @@ export function MoviesView() {
       .catch();
   }, [contextSearchQuery]);
 
-  return <>{movies && <Movies movies={movies} />}</>;
+  return <>{movies && <MoviesList movies={movies} />}</>;
 }
