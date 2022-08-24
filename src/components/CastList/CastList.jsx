@@ -1,4 +1,5 @@
 import { getImgUrl } from '../../utils';
+import PropTypes from 'prop-types';
 import { List, ListItem, ProfileImg, ProfileName } from './CastList.styled';
 
 export function CastList({ casts }) {
@@ -13,3 +14,7 @@ export function CastList({ casts }) {
     </List>
   );
 }
+
+CastList.propTypes = {
+  cast: PropTypes.object,
+};

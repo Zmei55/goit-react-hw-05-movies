@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import MoviesContext from './movies-context';
 
 export function SearchProvider({ children }) {
@@ -12,3 +13,7 @@ export function SearchProvider({ children }) {
     </MoviesContext.Provider>
   );
 }
+
+SearchProvider.propTypes = {
+  children: PropTypes.node,
+};

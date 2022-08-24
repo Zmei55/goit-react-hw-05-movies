@@ -24,7 +24,7 @@ export function SearchForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <IconButton type="submit">
+      <IconButton type="submit" aria-label="submit searchform movies">
         <ImSearch />
       </IconButton>
 

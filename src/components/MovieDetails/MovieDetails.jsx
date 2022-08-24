@@ -1,4 +1,5 @@
 import { getImgUrl } from '../../utils';
+import PropTypes from 'prop-types';
 import {
   Container,
   PosterImg,
@@ -44,3 +45,7 @@ export function MovieDetails({ movie }) {
     </>
   );
 }
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object,
+};

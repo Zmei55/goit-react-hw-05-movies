@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   ReviewList,
   ReviewListItem,
@@ -17,3 +18,7 @@ export function Reviews({ reviews }) {
     </ReviewList>
   );
 }
+
+Reviews.propTypes = {
+  reviews: PropTypes.array,
+};

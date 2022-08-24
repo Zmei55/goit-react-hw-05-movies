@@ -5,7 +5,7 @@ export const List = styled.ul``;
 
 export const ListItem = styled.li``;
 
-export const LinkById = styled(Link)`
+export const LinkRoute = styled(Link)`
   display: flex;
 
   text-decoration: none;

@@ -1,4 +1,5 @@
 import { Btn } from './Button.styled';
+import PropTypes from 'prop-types';
 
 export function Button({ text, onClick }) {
   return (
@@ -7,3 +8,8 @@ export function Button({ text, onClick }) {
     </Btn>
   );
 }
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
