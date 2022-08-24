@@ -3,7 +3,7 @@ import MoviesContext from '../context/movies/movies-context';
 import * as movieAPI from '../services/movie-api';
 import { MoviesList } from '../components/MoviesList';
 
-export function MoviesView() {
+export default function MoviesView() {
   const [movies, setMovies] = useState(null);
   const { contextSearchQuery } = useContext(MoviesContext);
 

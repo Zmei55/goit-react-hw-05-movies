@@ -1,12 +1,39 @@
 import { Routes, Route } from 'react-router-dom';
+import loadable from '@loadable/component';
 import { Container } from '../Container';
 import { AppBar } from '../AppBar';
-import { HomeView } from '../../pages/HomeView';
-import { MoviesView } from '../../pages/MoviesView';
-import { MovieDetailsView } from '../../pages/MovieDetailsView';
-import { MovieCastView } from '../../pages/MovieCastView';
-import { MovieReviewsView } from '../../pages/MovieReviewsView';
+import { Loader } from '../Loader';
+// import { HomeView } from '../../pages/HomeView';
+// import { MoviesView } from '../../pages/MoviesView';
+// import { MovieDetailsView } from '../../pages/MovieDetailsView';
+// import { MovieCastView } from '../../pages/MovieCastView';
+// import { MovieReviewsView } from '../../pages/MovieReviewsView';
 import './App.styled.jsx';
+
+const HomeView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/HomeView'),
+  { fallback: <Loader /> },
+);
+const MoviesView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/MoviesView'),
+  { fallback: <Loader /> },
+);
+const MovieDetailsView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/MovieDetailsView'),
+  { fallback: <Loader /> },
+);
+const MovieCastView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/MovieCastView'),
+  { fallback: <Loader /> },
+);
+const MovieReviewsView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/MovieReviewsView'),
+  { fallback: <Loader /> },
+);
+const NotFoundView = loadable(
+  () => import(/* webpackPrefetch: true */ '../../pages/NotFoundView'),
+  { fallback: <Loader /> },
+);
 
 export function App() {
   return (
@@ -24,6 +51,7 @@ export function App() {
           <Route path="cast" element={<MovieCastView />} />
           <Route path="reviews" element={<MovieReviewsView />} />
         </Route>
+        <Route path="*" element={<NotFoundView />} />
       </Routes>
     </Container>
   );

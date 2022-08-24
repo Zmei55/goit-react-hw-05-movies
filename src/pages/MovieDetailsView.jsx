@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react';
-import {
-  useParams,
-  useLocation,
-  useNavigate,
-  Outlet,
-  Link,
-} from 'react-router-dom';
+import { useParams, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
 import { Button } from '../components/Button';
 import { MovieDetails } from '../components/MovieDetails';
+import { MovieDetailsLinks } from '../components/MovieDetailsLinks';
 
-export function MovieDetailsView() {
+export default function MovieDetailsView() {
   const location = useLocation();
   const navigate = useNavigate();
   const { movieId } = useParams();
@@ -33,16 +28,7 @@ export function MovieDetailsView() {
       {movie && <MovieDetails movie={movie} />}
       <hr />
 
-      {movie && (
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
-      )}
+      {movie && <MovieDetailsLinks />}
       <Outlet />
     </>
   );
