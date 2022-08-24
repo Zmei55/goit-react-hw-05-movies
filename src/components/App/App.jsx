@@ -15,7 +15,7 @@ export function App() {
 
       <Routes>
         <Route path="/" element={<HomeView />} />
-        <Route path="/:movieId/*" element={<MovieDetailsView />}>
+        <Route path="/:movieId" element={<MovieDetailsView />}>
           <Route path="cast" element={<MovieCastView />} />
           <Route path="reviews" element={<MovieReviewsView />} />
         </Route>
