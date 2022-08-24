@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import MoviesContext from './movies-context';
 
-export function Provider({ children }) {
+export function SearchProvider({ children }) {
   const [contextSearchQuery, setContextSearchQuery] = useState('');
 
   return (

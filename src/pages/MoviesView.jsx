@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import MoviesContext from '../context/movies/movies-context';
 import * as movieAPI from '../services/movie-api';
-import { MoviesList } from '../components/MovieList';
+import { MoviesList } from '../components/MoviesList';
 
 export function MoviesView() {
   const [movies, setMovies] = useState(null);

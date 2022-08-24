@@ -8,19 +8,19 @@ export function MovieCastView() {
   const { movieId } = useParams();
   const [casts, setCasts] = useState('');
 
-  // useEffect(() => {
-  //   movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
-  // }, [movieId]);
-
-  function getCasts() {
+  useEffect(() => {
     movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
-  }
+  }, [movieId]);
+
+  // function getCasts() {
+  //   movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
+  // }
 
   return (
     <>
-      <button type="button" onClick={getCasts}>
+      {/* <button type="button" onClick={getCasts}>
         Cast
-      </button>
+      </button> */}
 
       {casts && (
         <ul>
@@ -28,6 +28,7 @@ export function MovieCastView() {
             <li key={cast.id}>
               <img
                 src={getImgUrl(cast.profile_path)}
+                // src={cast.profile_path}
                 alt={cast.name}
                 width="200"
               />

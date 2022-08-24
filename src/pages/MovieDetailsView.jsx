@@ -3,14 +3,12 @@ import {
   useParams,
   useLocation,
   useNavigate,
-  // Routes,
-  // Route,
-  // NavLink
+  Outlet,
+  Link,
 } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
 import { getImgUrl } from '../utils';
 // import { Button } from '../components/Button';
-// import { MovieDetails } from '../components/MovieDetails';
 // import { MovieCastView } from '../pages/MovieCastView';
 // import { MovieReviewsView } from '../pages/MovieReviewsView';
 
@@ -71,6 +69,24 @@ export function MovieDetailsView() {
         </>
       )}
       <hr />
+
+      <ul>
+        <li>
+          <Link to="cast">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
+
+      {/* <button type="button">
+        <NavLink to={movieId}>Cast</NavLink>
+      </button> */}
+
+      {/* <Routes>
+        <Route path="cast" element={<MovieCastView />} />
+      </Routes> */}
 
       {/* <button type="button" onClick={getCasts}>
         Cast
