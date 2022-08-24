@@ -7,11 +7,34 @@ export function MovieReviewsView() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState('');
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   movieAPI
+  //     .fetchReviewsFromMovie(movieId)
+  //     .then(res => setReviews(res.results));
+  // }, [movieId]);
+
+  function getReviews() {
     movieAPI
       .fetchReviewsFromMovie(movieId)
       .then(res => setReviews(res.results));
-  }, [movieId]);
+  }
 
-  return <>{reviews && <Reviews reviews={reviews} />}</>;
+  return (
+    <>
+      <button type="button" onClick={getReviews}>
+        Reviews
+      </button>
+
+      {reviews && (
+        <ul>
+          {reviews.map(review => (
+            <li key={review.id}>
+              <h4>Author: {review.author}</h4>
+              <p>{review.content}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+  );
 }

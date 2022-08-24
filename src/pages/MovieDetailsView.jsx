@@ -19,8 +19,8 @@ export function MovieDetailsView() {
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
-  const [casts, setCasts] = useState('');
-  const [reviews, setReviews] = useState('');
+  // const [casts, setCasts] = useState('');
+  // const [reviews, setReviews] = useState('');
 
   useEffect(() => {
     movieAPI.fetchMovieById(movieId).then(setMovie);
@@ -30,15 +30,15 @@ export function MovieDetailsView() {
     navigate(location?.state?.from ?? '/');
   }
 
-  function getCasts() {
-    movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
-  }
+  // function getCasts() {
+  //   movieAPI.fetchCastFromMovie(movieId).then(res => setCasts(res.cast));
+  // }
 
-  function getReviews() {
-    movieAPI
-      .fetchReviewsFromMovie(movieId)
-      .then(res => setReviews(res.results));
-  }
+  // function getReviews() {
+  //   movieAPI
+  //     .fetchReviewsFromMovie(movieId)
+  //     .then(res => setReviews(res.results));
+  // }
 
   return (
     <>
@@ -72,14 +72,14 @@ export function MovieDetailsView() {
       )}
       <hr />
 
-      <button type="button" onClick={getCasts}>
+      {/* <button type="button" onClick={getCasts}>
         Cast
-      </button>
-      <button type="button" onClick={getReviews}>
+      </button> */}
+      {/* <button type="button" onClick={getReviews}>
         Reviews
-      </button>
+      </button> */}
 
-      {casts && (
+      {/* {casts && (
         <ul>
           {casts.map(cast => (
             <li key={cast.id}>
@@ -92,9 +92,9 @@ export function MovieDetailsView() {
             </li>
           ))}
         </ul>
-      )}
+      )} */}
 
-      {reviews && (
+      {/* {reviews && (
         <ul>
           {reviews.map(review => (
             <li key={review.id}>
@@ -103,7 +103,7 @@ export function MovieDetailsView() {
             </li>
           ))}
         </ul>
-      )}
+      )} */}
     </>
   );
 }

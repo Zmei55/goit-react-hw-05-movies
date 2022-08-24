@@ -15,8 +15,6 @@ export function HomeView() {
       .catch();
   }, []);
 
-  // console.log(movies);
-
   return (
     <>
       <h1>Trending today</h1>
