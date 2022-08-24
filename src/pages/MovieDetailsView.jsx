@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import * as movieAPI from '../services/movie-api';
 import { getImgUrl } from '../utils';
-// import { Button } from '../components/Button';
+import { Button } from '../components/Button';
 // import { MovieCastView } from '../pages/MovieCastView';
 // import { MovieReviewsView } from '../pages/MovieReviewsView';
 
@@ -40,9 +40,10 @@ export function MovieDetailsView() {
 
   return (
     <>
-      <button type="button" onClick={onGoBack}>
+      <Button type="button" onClick={onGoBack} text="Back">
         Back
-      </button>
+      </Button>
+
       {movie && (
         <>
           <img
