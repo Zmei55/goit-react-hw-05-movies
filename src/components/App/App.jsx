@@ -48,6 +48,7 @@ export function App() {
         </Route>
         <Route path="/movies" element={<MoviesView />} />
         <Route path="/movies/:movieId" element={<MovieDetailsView />}>
+          {/* <Route path="/movies/:id" element={<MovieDetailsView />}> */}
           <Route path="cast" element={<MovieCastView />} />
           <Route path="reviews" element={<MovieReviewsView />} />
         </Route>
@@ -56,3 +57,13 @@ export function App() {
     </Container>
   );
 }
+
+// <Routes>
+//   <Route path='/' element={<SharedLayout />}>
+//     <Route index element={<HomePage />} />
+//     <Route path='contacts' element={<PrivateRoute><ContactsPage/></PrivateRoute>} />
+//     <Route path='register' element={<PublicRoute restricted><RegisterPage/></PublicRoute>} />
+//     <Route path='login' element={<PublicRoute restricted><LoginPage/></PublicRoute>} />
+//   </Route>
+//   <Route path="*" element={<HomePage />} />
+// </Routes>
