@@ -1,10 +1,10 @@
-import { Nav, Link } from './Navigation.styled';
+import { Nav, Navlink } from './Navigation.styled';
 
 export function Navigation() {
   return (
     <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/movies">Movies</Link>
+      <Navlink to="/">Home</Navlink>
+      <Navlink to="/movies">Movies</Navlink>
     </Nav>
   );
 }

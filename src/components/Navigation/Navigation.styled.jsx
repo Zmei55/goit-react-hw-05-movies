@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   margin-right: 16px;
 `;
 
-export const Link = styled(NavLink)`
+export const Navlink = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
   padding: 12px;
